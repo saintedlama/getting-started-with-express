@@ -1,0 +1,8 @@
+extends ../layout
+block content
+  h2 Delete #{meme.title}
+  p Do you really want to delete meme #{meme.title}? It's not that bad. Ok, no one laughed or even smiled a little, but deleting it?
+    | It's your decicion man. We have no backups.
+
+  form(method="POST")
+    button.btn.btn-primary(type="submit") Delete it!

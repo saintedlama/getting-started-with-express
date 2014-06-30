@@ -1,0 +1,26 @@
+.navbar.navbar-inverse.navbar-static-top(role="navigation")
+  .container
+    .navbar-header
+      button.navbar-toggle(type="button",data-toggle="collapse",data-target=".navbar-collapse")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+
+      a.navbar-brand(href="/") Memetron
+
+    if (user)
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href="/account/logout") Sign out
+
+    else
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href="/account/login") Sign in
+        li
+          a(href="/account/login") Sign up
+
+    if (user)
+      .collapse.navbar-collapse
+        p.navbar-text.navbar-right Hello #{user.username}

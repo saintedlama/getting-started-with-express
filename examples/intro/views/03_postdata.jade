@@ -1,0 +1,15 @@
+doctype html
+head
+    title The Express Kitchen Sink
+body
+    h1 #{q} #{name}
+
+    - if (name)
+        p Got name "#{name}" from save data!
+    - else
+        p Fill the form and post some data!
+
+    form(method="POST")
+        span Please enter a name
+        input(type="text", id="name", name="name")
+        button(type="submit") Save Data (POST)

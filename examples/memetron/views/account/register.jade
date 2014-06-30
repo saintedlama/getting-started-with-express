@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  if (err)
+    .alert.alert-danger= err.message
+      | Something was wrong!
+
+  form(method="POST")
+    .form-group
+      label(for="username") Email
+      input.form-control(type="email", id="username", name="username", placeholder="Enter email")
+
+    .form-group
+      label(for="password") Password
+      input.form-control(type="password", id="password", name="password")
+
+    button.btn.btn-primary(type="submit") Submit

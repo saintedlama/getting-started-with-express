@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  h2 Your meme collection
+  a.btn.btn-lg.btn-primary(href="/memes/create") Create one!
+
+  .container
+    if memes
+      each meme in memes
+        .col-md-4
+          h2= meme.title
+          img.img-responsive(src=meme.image)
+          a(href="/memes/" + meme.id) Detail
+          | &nbsp;|&nbsp;
+          a(href="/memes/delete/" + meme.id) Delete
